@@ -1,4 +1,39 @@
-<#
+<#PSScriptInfo
+
+.VERSION 1.0
+
+.GUID 3121f2fd-ff6f-4ddb-93cc-da97938b71c7
+
+.AUTHOR Brian McMahon
+
+.COPYRIGHT
+Copyright = '(c) Brian McMahon 2023
+This PowerShell script is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or 
+(at your option) any later version.
+This PowerShell script is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU General Public License for more details.
+You should have received a copy of the GNU General Public License
+along with this PowerShell script. If not, see <https://www.gnu.org/licenses/>.'
+
+.LICENSEURI
+https://github.com/bmcmcm/Test-PingPortThreaded/blob/master/LICENSE.md
+
+.PROJECTURI
+https://github.com/bmcmcm/Test-PingPortThreaded
+
+.EXTERNALMODULEDEPENDENCIES 
+@('Invoke-Threaded')
+
+.RELEASENOTES
+Initial Release
+
+#>
+
+<# 
 .SYNOPSIS
 Using threading via the "Invoke-Threaded" module, Test-PingPortThreaded pings a group of supplied targets, and port scans targets that are successfully pinged.
 
@@ -32,7 +67,7 @@ PS> .\Test-PingPortThreaded.ps1 | Out-GridView
 The following example gets targets all of the computer found in the local Active Directory Domain, scans specified ports and exports the results to a CSV file.
 
 PS> .\Test-PingPortThreaded.ps1 -Targets (Get-ADComputer -Filter *).Name -PortsToScan @(80,135,137,138,139,443) | Export-CSV -Path C:\Temp\PingPortResults.csv -NoTypeInformation
-#>
+#> 
 
 
 [CmdletBinding()]
