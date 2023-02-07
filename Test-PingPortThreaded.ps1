@@ -1,6 +1,6 @@
 <#PSScriptInfo
 
-.VERSION 1.0
+.VERSION 1.0.1
 
 .GUID 3121f2fd-ff6f-4ddb-93cc-da97938b71c7
 
@@ -16,13 +16,13 @@ https://github.com/bmcmcm/Test-PingPortThreaded/blob/master/LICENSE.md
 https://github.com/bmcmcm/Test-PingPortThreaded
 
 .EXTERNALMODULEDEPENDENCIES 
-@('Invoke-Threaded')
+Invoke-Threaded
 
 .RELEASENOTES
 Initial Release
 
 #>
-
+#Requires -Module Invoke-Threaded
 <# 
 .SYNOPSIS
 Using threading via the "Invoke-Threaded" module, Test-PingPortThreaded pings a group of supplied targets, and port scans targets that are successfully pinged.
