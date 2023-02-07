@@ -1,6 +1,6 @@
 <#PSScriptInfo
 
-.VERSION 1.0.1
+.VERSION 1.0.2
 
 .GUID 3121f2fd-ff6f-4ddb-93cc-da97938b71c7
 
@@ -22,7 +22,7 @@ Invoke-Threaded
 Initial Release
 
 #>
-#Requires -Module Invoke-Threaded
+
 <# 
 .SYNOPSIS
 Using threading via the "Invoke-Threaded" module, Test-PingPortThreaded pings a group of supplied targets, and port scans targets that are successfully pinged.
@@ -59,6 +59,7 @@ The following example gets targets all of the computer found in the local Active
 PS> .\Test-PingPortThreaded.ps1 -Targets (Get-ADComputer -Filter *).Name -PortsToScan @(80,135,137,138,139,443) | Export-CSV -Path C:\Temp\PingPortResults.csv -NoTypeInformation
 #> 
 
+#Requires -Modules invoke-threaded
 
 [CmdletBinding()]
 Param(
